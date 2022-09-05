@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { NavLink, useHistory, Redirect } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import { Navbar, NavItem, Icon, TextInput, Select } from 'react-materialize';
 

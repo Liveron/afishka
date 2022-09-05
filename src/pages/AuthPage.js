@@ -38,7 +38,7 @@ export const AuthPage = () => {
       //const data = await request('/api/auth/login', 'POST', {...form})
       //auth.login(data.token, data.userId, data.mode, +new Date())
       //удалить строку
-      auth.login(111111, 1, +new Date())
+      auth.login(111111, 1, false, +new Date())
     } catch (e) {}
   }
 
