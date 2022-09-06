@@ -5,8 +5,6 @@ export const EventCard = () => {
   return (
     <Row>
       <Col
-        m={6}
-        s={12}
       >
         <Card
           actions={[

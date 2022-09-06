@@ -2,11 +2,13 @@ import React, { useContext } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import { Navbar, NavItem, Icon, TextInput, Select } from 'react-materialize';
+import { useMemberState } from '../hooks/state.hook';
 
 
 export const MyNavbar = () => {
   const history = useHistory();
   const auth = useContext(AuthContext);
+  const {setSearch} = useMemberState();
 
   const logoutHandler = (e) => {
     e.preventDefault();
@@ -15,7 +17,9 @@ export const MyNavbar = () => {
   }
 
   const menuHandler = () => {
-    //TODO добавить изменение поля поиска и проверку списка мероприятия откуда нажали
+    const text = document.querySelector("#headerSearch").value;
+    document.querySelector("#headerSearch").value = '';
+    setSearch(text);
     history.push('/search');
   }
   return (
@@ -40,7 +44,7 @@ export const MyNavbar = () => {
         <NavItem>
           <TextInput
             icon="search"
-            id="TextInput-50"
+            id="headerSearch"
             label="Поиск"
             onKeyPress={(e) => {
               if (e.key === "Enter") {
