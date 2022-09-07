@@ -124,6 +124,7 @@ export const AddEvent = () => {
           </Col>
           <Col s={12} m={6} l={6}>
             <TimePicker
+              label="Время"
               id="TimePicker-30"
               options={{
                 autoClose: false,
