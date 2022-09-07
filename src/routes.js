@@ -1,10 +1,11 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { Main } from './pages/MainPage';
-import { Portfolio } from './pages/PortfolioPage.js';
+import { Personal } from './pages/PersonalPage.js';
 import { AuthPage } from './pages/AuthPage';
 import { Search } from './pages/SearchPage';
 import { Event } from './pages/EventPage';
+import { AddEvent } from './pages/AddEventPage';
 
 export const useRoutes = isAuthenticated => {
   if (isAuthenticated) {
@@ -14,13 +15,16 @@ export const useRoutes = isAuthenticated => {
           <Main />
         </Route>
         <Route path="/portfolio" exact>
-          <Portfolio />
+          <Personal />
         </Route>
         <Route path="/search" exact>
           <Search />
         </Route>
         <Route path="/event" exact>
           <Event />
+        </Route>
+        <Route path="/addevent" exact>
+          <AddEvent />
         </Route>
         <Redirect to="/main" />
       </Switch>

@@ -22,6 +22,7 @@ export const MyNavbar = () => {
     setSearchLine(text);
     history.push('/search');
   }
+  //TODO добавить ссылку на добавить событие
   return (
     <>
       <Navbar
