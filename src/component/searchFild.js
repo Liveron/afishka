@@ -1,10 +1,10 @@
 import React from 'react';
 import { TextInput } from 'react-materialize';
 
-export const SearchFild = ({ searchText, setSearch }) => {
+export const SearchFild = ({ searchText, setSearchLine }) => {
     const menuHandler = () => {
         const text = document.querySelector("#mainSearch").value;
-        setSearch(text);
+        setSearchLine(text);
     }
     console.log(searchText());
     return (

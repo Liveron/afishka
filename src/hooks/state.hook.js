@@ -1,16 +1,23 @@
 import {useState, useCallback } from 'react';
 
 export const useMemberState = () => {
-  const [searchLine, setSearchLine] = useState('');
+  const [searchLine, setSearchLineM] = useState('');
+  const [idCard, setIdCardM] = useState('');
 
   const checkSearchLine = useCallback(() => {
     return searchLine;
   }, [searchLine]);
 
+  const setSearchLine = useCallback((text) => {
+    setSearchLineM(text);
+  }, [setSearchLineM]);
 
-  const setSearch = useCallback((text) => {
-    setSearchLine(text);
-  }, [setSearchLine]);
+  const checkIdCard = useCallback(() => {
+    return idCard;
+  }, [idCard]);
 
-  return { setSearch, checkSearchLine };
+  const setIdCard = useCallback((text) => {
+    setIdCardM (text);
+  }, [setIdCardM ]);
+  return { setSearchLine, checkSearchLine, checkIdCard, setIdCard };
 };

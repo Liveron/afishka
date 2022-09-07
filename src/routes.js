@@ -4,6 +4,7 @@ import { Main } from './pages/MainPage';
 import { Portfolio } from './pages/PortfolioPage.js';
 import { AuthPage } from './pages/AuthPage';
 import { Search } from './pages/SearchPage';
+import { Event } from './pages/EventPage';
 
 export const useRoutes = isAuthenticated => {
   if (isAuthenticated) {
@@ -17,6 +18,9 @@ export const useRoutes = isAuthenticated => {
         </Route>
         <Route path="/search" exact>
           <Search />
+        </Route>
+        <Route path="/event" exact>
+          <Event />
         </Route>
         <Redirect to="/main" />
       </Switch>

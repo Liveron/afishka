@@ -8,7 +8,7 @@ import { useMemberState } from '../hooks/state.hook';
 
 export const Search = () => {
   let cardArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-  const {setSearch, checkSearchLine} = useMemberState();
+  const {setSearchLine, checkSearchLine} = useMemberState();
 
   //TODO добавить отправку запроса с поисковой фразой
 
@@ -16,7 +16,7 @@ export const Search = () => {
     <>
       <Row>
         <Col s={12} m={12} l={12}>
-          <SearchFild searchText={checkSearchLine} setSearch={setSearch}/>
+          <SearchFild searchText={checkSearchLine} setSearchLine={setSearchLine}/>
         </Col>
       </Row>
       <Row>
@@ -24,7 +24,7 @@ export const Search = () => {
           <Filter />
         </Col>
         <Col s={12} m={6} l={9}>
-          {cardArray.map((id) => <Row><EventCard /></Row>)}
+          {cardArray.map((id) => <Row><EventCard id={id} /></Row>)}
         </Col>
       </Row>
     </>

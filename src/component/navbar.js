@@ -8,7 +8,7 @@ import { useMemberState } from '../hooks/state.hook';
 export const MyNavbar = () => {
   const history = useHistory();
   const auth = useContext(AuthContext);
-  const {setSearch} = useMemberState();
+  const {setSearchLine} = useMemberState();
 
   const logoutHandler = (e) => {
     e.preventDefault();
@@ -19,7 +19,7 @@ export const MyNavbar = () => {
   const menuHandler = () => {
     const text = document.querySelector("#headerSearch").value;
     document.querySelector("#headerSearch").value = '';
-    setSearch(text);
+    setSearchLine(text);
     history.push('/search');
   }
   return (
