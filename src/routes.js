@@ -14,7 +14,7 @@ export const useRoutes = isAuthenticated => {
         <Route path="/main" exact>
           <Main />
         </Route>
-        <Route path="/portfolio" exact>
+        <Route path="/personal" exact>
           <Personal />
         </Route>
         <Route path="/search" exact>
