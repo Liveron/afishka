@@ -24,7 +24,7 @@ export const MainBlock = () => (
             </div>
         </div>
         <Parallax
-            image={<img alt="" src={pict2} />}
+            image={<img alt="" src={pict2}/>}
             options={{
                 responsiveThreshold: 0
             }}

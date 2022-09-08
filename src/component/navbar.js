@@ -1,19 +1,24 @@
 import React, { useContext } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
-import { Navbar, NavItem, Icon, TextInput, Select } from 'react-materialize';
+import { Navbar, NavItem, Icon, TextInput, Select, Button, SideNav, SideNavItem } from 'react-materialize';
 import { useMemberState } from '../hooks/state.hook';
 
 
 export const MyNavbar = () => {
   const history = useHistory();
   const auth = useContext(AuthContext);
-  const {setSearchLine} = useMemberState();
+  const { setSearchLine } = useMemberState();
 
   const logoutHandler = (e) => {
     e.preventDefault();
     auth.logout();
     history.push('/');
+  }
+
+  const hrefHandler = (e, link) => {
+    e.preventDefault();
+    history.push(link);
   }
 
   const menuHandler = () => {
@@ -27,7 +32,7 @@ export const MyNavbar = () => {
     <>
       <Navbar
         alignLinks="right"
-        brand={<a className="brand-logo" href="/main">А-фишка</a>}
+        brand={<a className="brand-logo" onClick={(e) => hrefHandler(e, '/main')}>А-фишка</a>}
         id="mobile-nav"
         menuIcon={<Icon>menu</Icon>}
         options={{
@@ -102,9 +107,50 @@ export const MyNavbar = () => {
             </option>
           </Select>
         </NavItem>
-        <NavItem>
-          <a className="black-text" href="/" onClick={logoutHandler}>Выйти</a>
-        </NavItem>
+        <div>
+          <style>
+            {`
+            #root > div {
+              z-index: 99999 !important;
+            }
+          `}
+          </style>
+          <SideNav
+            id="SideNav-37"
+            options={{
+              draggable: true,
+              edge: 'right'
+            }}
+            trigger={<Button node="button">Меню</Button>}
+          >
+            <SideNavItem
+              user={{
+                background: 'https://placeimg.com/640/480/tech',
+                email: 'jdandturk@gmail.com',
+                image: 'static/media/react-materialize-logo.824c6ea3.svg',
+                name: 'John Doe'
+              }}
+              userView
+            />
+            <SideNavItem
+              onClick={(e) => hrefHandler(e, '/addevent')}
+              icon={<Icon>add_circle</Icon>}>
+              Добавить мероприятие
+            </SideNavItem>
+            <SideNavItem
+              onClick={(e) => hrefHandler(e, '/personal')}
+              icon={<Icon>account_circle</Icon>}>
+              Личный кабинет
+            </SideNavItem>
+            <SideNavItem divider />
+            <SideNavItem
+              onClick={logoutHandler}
+              icon={<Icon>exit_to_app</Icon>}
+              waves>
+              Выйти
+            </SideNavItem>
+          </SideNav>
+        </div>
       </Navbar>
 
     </>
