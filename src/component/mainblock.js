@@ -11,7 +11,7 @@ export const MainBlock = () => (
             options={{
                 responsiveThreshold: 0
             }}
-            children={<div>Развлечения начинаются отсюда</div>}
+            children={<div className='mainHelloDiv'>Развлечения начинаются отсюда</div>}
         />
         <div className="section white">
             <div className="row container">

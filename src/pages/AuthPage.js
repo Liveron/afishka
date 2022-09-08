@@ -58,7 +58,6 @@ export const AuthPage = () => {
                     id="email"
                     type="text"
                     name="email"
-                    className="yellow-input"
                     value={form.email}
                     onChange={changeHandler}
                   />
@@ -71,7 +70,6 @@ export const AuthPage = () => {
                     id="password"
                     type="password"
                     name="password"
-                    className="yellow-input"
                     value={form.password}
                     onChange={changeHandler}
                   />
@@ -82,7 +80,7 @@ export const AuthPage = () => {
             </div>
             <div className="card-action">
               <button
-                className="btn yellow accent-3 black-text"
+                className="btn red darken-3 black-text"
                 style={{marginRight: 10}}
                 disabled={loading}
                 onClick={loginHandler}

@@ -32,9 +32,10 @@ export const MyNavbar = () => {
     <>
       <Navbar
         alignLinks="right"
-        brand={<a className="brand-logo" onClick={(e) => hrefHandler(e, '/main')}>А-фишка</a>}
+        brand={<a className="brand-logo white-text" onClick={(e) => hrefHandler(e, '/main')}>А-фишка</a>}
         id="mobile-nav"
         menuIcon={<Icon>menu</Icon>}
+        className="grey darken-4"
         options={{
           draggable: true,
           edge: 'left',
@@ -52,6 +53,7 @@ export const MyNavbar = () => {
             icon="search"
             id="headerSearch"
             label="Поиск"
+
             onKeyPress={(e) => {
               if (e.key === "Enter") {
                 menuHandler();
@@ -61,13 +63,14 @@ export const MyNavbar = () => {
         </NavItem>
 
         <NavItem>
-          <NavLink to="/main" className="black-text">Главная</NavLink>
+          <NavLink to="/main" className="white-text">Главная</NavLink>
         </NavItem>
         <NavItem>
           <Select
             id="Select-65"
             multiple={false}
             onChange={menuHandler}
+            className="white-text"
             options={{
               classes: '',
               dropdownOptions: {
@@ -121,7 +124,7 @@ export const MyNavbar = () => {
               draggable: true,
               edge: 'right'
             }}
-            trigger={<Button node="button">Меню</Button>}
+            trigger={<Button node="button" className='red darken-3'>Меню</Button>}
           >
             <SideNavItem
               user={{
