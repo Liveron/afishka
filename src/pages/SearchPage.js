@@ -1,5 +1,7 @@
-import React from 'react';
-import { Row, Col, Container, Icon, Pagination } from 'react-materialize';
+import React, {useCallback, useContext, useEffect, useState} from 'react';
+import {useHttp} from '../hooks/http.hook';
+import {AuthContext} from '../context/AuthContext';
+import { Row, Col, Container, Icon, Pagination, Preloader } from 'react-materialize';
 import { SearchFild } from '../component/searchFild';
 import { Filter } from '../component/filter';
 import { EventCard } from '../component/eventCard';
@@ -11,7 +13,35 @@ export const Search = () => {
   const { setSearchLine, checkSearchLine } = useMemberState();
 
   //TODO добавить отправку запроса с поисковой фразой
+  const [dataEvent, setDataEvent] = useState([])
+  const { loading, request } = useHttp();
+  const { token } = useContext(AuthContext)
+  const fetchData = useCallback(async () => {
+    try {
+      const data = await request('/api/data/short', 'GET', null, {
+        //symbolStock: symbol,
+        Authorization: `Bearer ${token}`
+      });
+      setDataEvent(data);
+    } catch (e) { }
+  }, [token, request])
 
+  useEffect(() => {
+    fetchData()
+  }, [fetchData])
+
+  if (loading) {
+    return (
+      <Col s={4}>
+        <Preloader
+          active
+          color="red"
+          flashing={false}
+          size="small"
+        />
+      </Col>
+    )
+  }
   return (
     <Container>
       <Row>
