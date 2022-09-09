@@ -150,6 +150,7 @@ export const AddEvent = () => {
           </Col>
         </Row>
         <Button
+          className='red darken-3 black-text'
           node="button"
           waves="light"
           onClick={sendHandler}

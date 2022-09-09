@@ -18,6 +18,10 @@ input:focus {
   color: rgb(155, 155, 155);
 }
 
+.material-icons.active {
+  color: #C6264D!important;
+}
+
 .parallax img {
   max-width: 100%;
   height: auto;

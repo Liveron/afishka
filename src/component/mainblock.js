@@ -2,6 +2,7 @@ import React from 'react';
 import { Parallax, Button, Icon } from 'react-materialize';
 import pict1 from "../img/ball.png";
 import pict2 from "../img/head.webp";
+import pict3 from "../img/testing.jpg";
 
 export const MainBlock = () => (
     //TODO нужно всё выравнить
@@ -21,27 +22,26 @@ export const MainBlock = () => (
                 <p className="grey-text text-darken-3 lighten-3">
                     На сайте можно выбрать рекомендацию на основе Ваших музыкальных предпочтений. Существует прямая корреляция между Вашим выбором в музыке и Вашех характеристикой личности. На основе этой корреляции мы и предложим различные мероприятия, которые будут не только музыкальными.
                 </p>
-            </div>
-        </div>
-        <Parallax
-            image={<img alt="" src={pict2}/>}
-            options={{
-                responsiveThreshold: 0
-            }}
-            children={
                 <Button
                     node="button"
                     style={{
                         marginRight: '5px'
                     }}
                     waves="light"
+                    className='red darken-3 white-text'
                 >
                     Попробовать
                     <Icon left>
                         headset
                     </Icon>
                 </Button>
-            }
+            </div>
+        </div>
+        <Parallax
+            image={<img alt="" src={pict2} />}
+            options={{
+                responsiveThreshold: 0
+            }}
         />
         <div className="section white">
             <div className="row container">
@@ -51,27 +51,26 @@ export const MainBlock = () => (
                 <p className="grey-text text-darken-3 lighten-3">
                     Тест позволит узнать что Вы за личность, на основе этой информации рекомендации будут более точные.
                 </p>
-            </div>
-        </div>
-        <Parallax
-            image={<img alt="" src={pict2} />}
-            options={{
-                responsiveThreshold: 0
-            }}
-            children={
                 <Button
                     node="button"
                     style={{
                         marginRight: '5px'
                     }}
                     waves="light"
+                    className='red darken-3 white-text'
                 >
-                    Попробовать
+                    Пройти тест
                     <Icon left>
-                        headset
+                    text_fields
                     </Icon>
                 </Button>
-            }
+            </div>
+        </div>
+        <Parallax
+            image={<img alt="" src={pict3} />}
+            options={{
+                responsiveThreshold: 0
+            }}
         />
     </div>
 )

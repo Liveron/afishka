@@ -27,12 +27,11 @@ export const MyNavbar = () => {
     setSearchLine(text);
     history.push('/search');
   }
-  //TODO добавить ссылку на добавить событие
   return (
     <>
       <Navbar
         alignLinks="right"
-        brand={<a className="brand-logo white-text" onClick={(e) => hrefHandler(e, '/main')}>А-фишка</a>}
+        brand={<a className="brand-logo white-text" href="/main" onClick={(e) => hrefHandler(e, '/main')}>А-фишка</a>}
         id="mobile-nav"
         menuIcon={<Icon>menu</Icon>}
         className="grey darken-4"
@@ -50,9 +49,10 @@ export const MyNavbar = () => {
       >
         <NavItem>
           <TextInput
+            className="white-text"
             icon="search"
             id="headerSearch"
-            label="Поиск"
+            placeholder="Поиск"
 
             onKeyPress={(e) => {
               if (e.key === "Enter") {

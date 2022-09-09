@@ -1,24 +1,21 @@
 import React from 'react';
-import { Row, Col, Section } from 'react-materialize';
-import { useMemberState } from '../hooks/state.hook';
+import { Row, Col, Container } from 'react-materialize';
+import pict1 from "../img/event.jpg";
 
 export const Event = () => {
-  const {checkIdCard} = useMemberState();
-  const id = checkIdCard();
   //TODO запрос по айди
   return (
-    <Section>
+    <Container>
+      <Row></Row>
       <Row>
-        <Col l={6}>
-          <img href="https://materializecss.com/images/sample-1.jpg"></img>
-        </Col>
-        <Col l={6}>
-          <p>Title</p>
-        </Col>
+        <img className="eventPict" src={pict1} alt=""></img>
+      </Row>
+      <Row>
+        <p>Title</p>
       </Row>
       <Row>
         <Col>description</Col>
       </Row>
-    </Section>
+    </Container>
   )
 };
