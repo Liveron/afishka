@@ -22,12 +22,6 @@ export const MyNavbar = () => {
   }
 
   const menuHandler = () => {
-    //TODO возможно надо удалить
-    /*
-    const text = document.querySelector("#headerSearch").value;
-    document.querySelector("#headerSearch").value = '';
-    setSearchLine(text);
-    */
     const text = document.querySelector("#headerSearch").value;
     stateCont.setSearchLine(text);
     history.push('/search');
@@ -101,17 +95,38 @@ export const MyNavbar = () => {
             >
               Мероприятия
             </option>
-            <option value="1">
+            <option value="все">
               Любые
             </option>
-            <option value="1">
-              Спортивные
+            <option value="настольные_игры">
+              Настольные игры
             </option>
-            <option value="2">
-              Музыкальные
+            <option value="музыкальные_концерты">
+              Музыкальные концерты
             </option>
-            <option value="3">
-              Искусство
+            <option value="балет">
+              Балет
+            </option>
+            <option value="опера">
+              Опера
+            </option>
+            <option value="театральные_представления">
+              Театральные представления
+            </option>
+            <option value="хакатоны">
+              Хакатоны
+            </option>
+            <option value="кино">
+              Кино
+            </option>
+            <option value="мастер_классы">
+              Мастер-классы и вебинары
+            </option>
+            <option value="киберспортивные_соревнования">
+              Киберспортивные соревнования
+            </option>
+            <option value="фестивали">
+              Фестивали
             </option>
           </Select>
         </NavItem>

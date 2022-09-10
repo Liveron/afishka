@@ -5,14 +5,12 @@ import { Row, Col, Container, Icon, Pagination, Preloader } from 'react-material
 import { SearchFild } from '../component/searchFild';
 import { Filter } from '../component/filter';
 import { EventCard } from '../component/eventCard';
-//import { useMemberState } from '../hooks/state.hook';
 import { StateContext } from '../context/StateContext';
 
 
 export const Search = () => {
   const stateCont = useContext(StateContext);
   let cardArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-  //const { setSearchLine, checkSearchLine } = useMemberState();
 
   //TODO добавить отправку запроса с поисковой фразой
   const [dataEvent, setDataEvent] = useState([])
