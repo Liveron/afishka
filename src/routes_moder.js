@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { Moderator } from './pages/ModeratePage';
 import { AuthPage } from './pages/AuthPage';
 import { Search } from './pages/SearchPage';
+import { Event } from './pages/EventPage';
 
 export const useRoutesModer = isAuthenticated => {
   if (isAuthenticated) {
@@ -13,6 +14,9 @@ export const useRoutesModer = isAuthenticated => {
         </Route>
         <Route path="/search" exact>
           <Search />
+        </Route>
+        <Route path="/event" exact>
+          <Event />
         </Route>
         <Redirect to="/mode" />
       </Switch>

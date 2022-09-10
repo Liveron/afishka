@@ -1,10 +1,12 @@
 import React, {useContext, useEffect, useState} from 'react';
+import { useHistory } from 'react-router-dom';
 import {useHttp} from '../hooks/http.hook';
 import {useMessage} from '../hooks/message.hook';
 import {AuthContext} from '../context/AuthContext';
 
 
 export const AuthPage = () => {
+  const history = useHistory();
   const auth = useContext(AuthContext)
   const message = useMessage()
   const {loading, request, error, clearError} = useHttp()
@@ -27,8 +29,8 @@ export const AuthPage = () => {
 
   const registerHandler = async () => {
     try {
-      const data = await request('/api/auth/register', 'POST', {...form})
-      message(data.message)
+      const data = await request('/api/auth/register', 'POST', {...form});
+      message(data.message);
     } catch (e) {}
   }
 
@@ -38,7 +40,8 @@ export const AuthPage = () => {
       //const data = await request('/api/auth/login', 'POST', {...form})
       //auth.login(data.token, data.userId, data.mode, +new Date())
       //удалить строку
-      auth.login(111111, 1, false, +new Date())
+      auth.login(111111, 1, false, +new Date());
+      history.push('/');
     } catch (e) {}
   }
 

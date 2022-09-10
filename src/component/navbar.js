@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
+import { StateContext } from '../context/StateContext';
 import { Navbar, NavItem, Icon, TextInput, Select, Button, SideNav, SideNavItem } from 'react-materialize';
-import { useMemberState } from '../hooks/state.hook';
 
 
 export const MyNavbar = () => {
   const history = useHistory();
   const auth = useContext(AuthContext);
-  const { setSearchLine } = useMemberState();
+  const stateCont = useContext(StateContext);
 
   const logoutHandler = (e) => {
     e.preventDefault();
@@ -22,9 +22,14 @@ export const MyNavbar = () => {
   }
 
   const menuHandler = () => {
+    //TODO возможно надо удалить
+    /*
     const text = document.querySelector("#headerSearch").value;
     document.querySelector("#headerSearch").value = '';
     setSearchLine(text);
+    */
+    const text = document.querySelector("#headerSearch").value;
+    stateCont.setSearchLine(text);
     history.push('/search');
   }
   return (

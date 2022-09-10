@@ -9,8 +9,8 @@ export const Moderator = () => {
 	return ( 
     <Container>
       <Row>
-        <Col s={12} m={6} l={7}>
-          {cardArray.map((id) => <Row><EventCard id={id} /><ModerButtons/></Row>)}
+        <Col>
+          {cardArray.map((id) => <Row><EventCard id={id} /><ModerButtons eventId={id}/></Row>)}
         </Col>
       </Row>
       <Row>

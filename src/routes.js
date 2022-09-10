@@ -11,6 +11,9 @@ export const useRoutes = isAuthenticated => {
   if (isAuthenticated) {
     return (
       <Switch>
+        <Route path="/auth" exact>
+          <AuthPage />
+        </Route>
         <Route path="/main" exact>
           <Main />
         </Route>
@@ -33,10 +36,13 @@ export const useRoutes = isAuthenticated => {
 
   return (
     <Switch>
-      <Route path="/" exact>
-        <AuthPage />
+      <Route path="/search" exact>
+        <Search />
       </Route>
-      <Redirect to="/" />
+      <Route path="/auth" exact>
+          <AuthPage />
+        </Route>
+      <Redirect to="/search" />
     </Switch>
   )
 }
