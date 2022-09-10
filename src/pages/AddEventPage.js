@@ -23,6 +23,12 @@ export const AddEvent = () => {
           label="Описание"
         />
         <TextInput
+          id="TextInput-26"
+          label="File"
+          type="file"
+          onChange={(e)=>{console.log("file", e.target.value)}}
+        />
+        <TextInput
           id="TextInput-48"
           label="Ссылка на картинку"
         />

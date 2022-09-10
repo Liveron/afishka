@@ -37,10 +37,10 @@ export const AuthPage = () => {
   const loginHandler = async () => {
     try {
       //TODO нужно убрать в проде коментарии
-      //const data = await request('/api/auth/login', 'POST', {...form})
-      //auth.login(data.token, data.userId, data.mode, +new Date())
+      const data = await request('/api/auth/login', 'POST', {...form})
+      auth.login(data.token, data.userId, data.mode, +new Date())
       //удалить строку
-      auth.login(111111, 1, false, +new Date());
+      //auth.login(111111, 1, false, +new Date());
       history.push('/');
     } catch (e) {}
   }
