@@ -1,7 +1,7 @@
 import React from 'react';
 import { Parallax, Button, Icon } from 'react-materialize';
-import pict1 from "../img/ball.png";
-import pict2 from "../img/head.webp";
+import pict1 from "../img/t_1.jpg";
+import pict2 from "../img/face.jpg";
 import pict3 from "../img/testing.jpg";
 
 export const MainBlock = () => (
@@ -19,8 +19,8 @@ export const MainBlock = () => (
                 <h2 className="header">
                     Как подобрать мероприятие
                 </h2>
-                <p className="grey-text text-darken-3 lighten-3">
-                    На сайте можно выбрать рекомендацию на основе Ваших музыкальных предпочтений. Существует прямая корреляция между Вашим выбором в музыке и Вашех характеристикой личности. На основе этой корреляции мы и предложим различные мероприятия, которые будут не только музыкальными.
+                <p className="main-text grey-text text-darken-3 lighten-3">
+                    Мы не знаем, какое мероприятие Вам понравится, однако Вы это прекрасно знаете, даже если и не догадываетесь. Наша задача помочь Вам выбрать подходящее мероприятие. Изобразите на камеру, какую эмоции Вы хотите получить от мероприятия и отправьте нам эту фотография, а мы уже постараемся, чтобы эту эмоцию Вы получили.
                 </p>
                 <Button
                     node="button"
@@ -32,7 +32,7 @@ export const MainBlock = () => (
                 >
                     Попробовать
                     <Icon left>
-                        headset
+                    accessibility
                     </Icon>
                 </Button>
             </div>
@@ -48,7 +48,7 @@ export const MainBlock = () => (
                 <h2 className="header">
                     Можно пройти тестирование
                 </h2>
-                <p className="grey-text text-darken-3 lighten-3">
+                <p className="main-text grey-text text-darken-3 lighten-3">
                     Тест позволит узнать что Вы за личность, на основе этой информации рекомендации будут более точные.
                 </p>
                 <Button
@@ -61,7 +61,7 @@ export const MainBlock = () => (
                 >
                     Пройти тест
                     <Icon left>
-                    text_fields
+                        text_fields
                     </Icon>
                 </Button>
             </div>

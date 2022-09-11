@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import { Navbar, NavItem, Icon, TextInput, Select, Button, SideNav, SideNavItem } from 'react-materialize';
 import { StateContext } from '../context/StateContext';
+import logo from "../img/icn_logo.png";
 
 
 export const MyNavbarWithoutLogin = () => {
@@ -23,7 +24,7 @@ export const MyNavbarWithoutLogin = () => {
     <>
       <Navbar
         alignLinks="right"
-        brand={<a className="brand-logo white-text" href="/main" onClick={(e) => hrefHandler(e, '/main')}>А-фишка</a>}
+        brand={<a className="brand-logo white-text" href="/main" onClick={(e) => hrefHandler(e, '/main')}><Icon><img className="header_logo" alt="" src={logo} /></Icon></a>}
         id="mobile-nav"
         menuIcon={<Icon>menu</Icon>}
         className="grey darken-4"

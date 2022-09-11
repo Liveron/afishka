@@ -169,7 +169,7 @@ export const AddEvent = () => {
             </Col>
           </Row>
           <Button
-            className='red darken-3 black-text'
+            className='red darken-3 white-text'
             node="button"
             waves="light"
             type="submit"
