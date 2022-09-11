@@ -18,9 +18,9 @@ export const Search = () => {
   const { token } = useContext(AuthContext)
   const fetchData = useCallback(async () => {
     try {
-      const data = await request('/api/data/short', 'GET', null, {
+      const data = await request('http://localhost:5083/event/getall', 'GET', null, {
         //symbolStock: symbol,
-        Authorization: `Bearer ${token}`
+        //Authorization: `Bearer ${token}`
       });
       setDataEvent(data);
     } catch (e) { }

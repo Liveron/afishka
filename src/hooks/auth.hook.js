@@ -31,7 +31,7 @@ export const useAuth = () => {
 
   const checkToken = useCallback(async (tok) => {
     try {
-      await request('/api/auth/checking', 'POST', {'ant': 'asd'}, {
+      await request('/api/auth/checking', 'POST', {}, {
         Authorization: `Bearer ${tok}`
       });
     } catch (e) {

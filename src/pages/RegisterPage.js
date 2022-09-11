@@ -11,7 +11,7 @@ export const RegisterPage = () => {
   const message = useMessage()
   const {loading, request, error, clearError} = useHttp()
   const [form, setForm] = useState({
-    email: '', password: '', againpassword: ''
+    username: '', password: '', confirmpassword: ''
   })
 
   useEffect(() => {
@@ -29,9 +29,10 @@ export const RegisterPage = () => {
 
   const registerHandler = async () => {
     try {
-      const data = await request('/api/auth/register', 'POST', {...form});
-      message(data.message);
+      const data = await request('http://localhost:5123/auth/register', 'POST', {...form});
+      //message(data.message);
       history.push('/auth');
+      console.log("asdasd");
     } catch (e) {}
   }
 
@@ -50,8 +51,8 @@ export const RegisterPage = () => {
                     placeholder="Введите email"
                     id="email"
                     type="text"
-                    name="email"
-                    value={form.email}
+                    name="username"
+                    value={form.username}
                     onChange={changeHandler}
                   />
                   <label htmlFor="email">Email</label>
@@ -74,8 +75,8 @@ export const RegisterPage = () => {
                     placeholder="Введите повторно пароль"
                     id="password2"
                     type="password"
-                    name="againpassword"
-                    value={form.againpassword}
+                    name="confirmpassword"
+                    value={form.confirmpassword}
                     onChange={changeHandler}
                   />
                   <label htmlFor="email">Подтвердите пароль</label>

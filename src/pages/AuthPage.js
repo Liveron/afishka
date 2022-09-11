@@ -11,7 +11,7 @@ export const AuthPage = () => {
   const message = useMessage()
   const {loading, request, error, clearError} = useHttp()
   const [form, setForm] = useState({
-    email: '', password: ''
+    username: '', password: ''
   })
 
   useEffect(() => {
@@ -34,7 +34,7 @@ export const AuthPage = () => {
   const loginHandler = async () => {
     try {
       //TODO нужно убрать в проде коментарии
-      //const data = await request('/api/auth/login', 'POST', {...form})
+      //const data = await request('/auth/login', 'POST', {...form})
       //auth.login(data.token, data.userId, data.mode, +new Date())
       //удалить строку
       auth.login(111111, 1, false, +new Date());
@@ -57,8 +57,8 @@ export const AuthPage = () => {
                     placeholder="Введите email"
                     id="email"
                     type="text"
-                    name="email"
-                    value={form.email}
+                    name="username"
+                    value={form.username}
                     onChange={changeHandler}
                   />
                   <label htmlFor="email">Email</label>
