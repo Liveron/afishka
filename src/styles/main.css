@@ -5,21 +5,22 @@ html {
   height: 100% !important;
 }
 
-input:focus + label {
-  color:#C6264D!important;
+input:focus+label {
+  color: #c62828 !important;
 }
 
 input:focus {
-  border-bottom: 1px solid #C6264D!important;
-  box-shadow: 0 1px 0 0 #C6264D!important;
+  border-bottom: 1px solid #c62828  !important;
+  box-shadow: 0 1px 0 0 #c62828  !important;
 }
+
 /* label color */
 .input-field label {
   color: rgb(155, 155, 155);
 }
 
 .material-icons.active {
-  color: #C6264D!important;
+  color: #c62828  !important;
 }
 
 .parallax img {
@@ -35,9 +36,10 @@ input:focus {
   text-shadow: 1px 1px #000000;
 }
 
-.main-text{
+.main-text {
   font-size: 1.1rem;
 }
+
 ::-webkit-scrollbar :horizontal {
   display: none;
 }

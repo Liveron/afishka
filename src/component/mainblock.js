@@ -1,5 +1,6 @@
 import React from 'react';
 import { Parallax, Button, Icon } from 'react-materialize';
+import { ModalRecomend } from './modalRecomend';
 import pict1 from "../img/t_1.jpg";
 import pict2 from "../img/face.jpg";
 import pict3 from "../img/testing.jpg";
@@ -22,19 +23,7 @@ export const MainBlock = () => (
                 <p className="main-text grey-text text-darken-3 lighten-3">
                     Мы не знаем, какое мероприятие Вам понравится, однако Вы это прекрасно знаете, даже если и не догадываетесь. Наша задача помочь Вам выбрать подходящее мероприятие. Изобразите на камеру, какую эмоции Вы хотите получить от мероприятия и отправьте нам эту фотография, а мы уже постараемся, чтобы эту эмоцию Вы получили.
                 </p>
-                <Button
-                    node="button"
-                    style={{
-                        marginRight: '5px'
-                    }}
-                    waves="light"
-                    className='red darken-3 white-text'
-                >
-                    Попробовать
-                    <Icon left>
-                    accessibility
-                    </Icon>
-                </Button>
+                <ModalRecomend/>
             </div>
         </div>
         <Parallax

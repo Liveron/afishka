@@ -38,12 +38,8 @@ export const AddEvent = () => {
           />
           <TextInput
             id="TextInput-26"
-            label="File"
+            label="Картинка"
             type="file"
-          />
-          <TextInput
-            id="TextInput-48"
-            label="Ссылка на картинку"
           />
           <TextInput
             id="TextInput-48"

@@ -5,13 +5,13 @@ import {useMessage} from '../hooks/message.hook';
 import {AuthContext} from '../context/AuthContext';
 
 
-export const AuthPage = () => {
+export const RegisterPage = () => {
   const history = useHistory();
   const auth = useContext(AuthContext)
   const message = useMessage()
   const {loading, request, error, clearError} = useHttp()
   const [form, setForm] = useState({
-    email: '', password: ''
+    email: '', password: '', againpassword: ''
   })
 
   useEffect(() => {
@@ -28,17 +28,10 @@ export const AuthPage = () => {
   }
 
   const registerHandler = async () => {
-    history.push('/register');
-  }
-
-  const loginHandler = async () => {
     try {
-      //TODO нужно убрать в проде коментарии
-      //const data = await request('/api/auth/login', 'POST', {...form})
-      //auth.login(data.token, data.userId, data.mode, +new Date())
-      //удалить строку
-      auth.login(111111, 1, false, +new Date());
-      history.push('/');
+      const data = await request('/api/auth/register', 'POST', {...form});
+      message(data.message);
+      history.push('/auth');
     } catch (e) {}
   }
 
@@ -49,7 +42,7 @@ export const AuthPage = () => {
           <h1>А-фишка</h1>
           <div className="card grey lighten-3">
             <div className="card-content black-text">
-              <span className="card-title">Авторизация</span>
+              <span className="card-title">Регистрация</span>
               <div>
 
                 <div className="input-field">
@@ -76,23 +69,27 @@ export const AuthPage = () => {
                   <label htmlFor="email">Пароль</label>
                 </div>
 
+                <div className="input-field">
+                  <input
+                    placeholder="Введите повторно пароль"
+                    id="password2"
+                    type="password"
+                    name="againpassword"
+                    value={form.againpassword}
+                    onChange={changeHandler}
+                  />
+                  <label htmlFor="email">Подтвердите пароль</label>
+                </div>
+
               </div>
             </div>
             <div className="card-action">
-              <button
-                className="btn red darken-3 white-text"
-                style={{marginRight: 10}}
-                disabled={loading}
-                onClick={loginHandler}
-              >
-                Войти
-              </button>
               <button
                 className="btn grey lighten-1 black-text"
                 onClick={registerHandler}
                 disabled={loading}
               >
-                Регистрация
+                Зарегистрироваться
               </button>
             </div>
           </div>
